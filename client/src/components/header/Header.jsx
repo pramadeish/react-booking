@@ -8,11 +8,12 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import {format} from "date-fns";
 import { useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
-
+import { AuthContext } from "../../context/AuthContext";
 
 const Header = ({type}) => {
     const [openDate,setOpenDate]=useState(false);
     const [destinantion,setDestination]=useState("");
+    const {user}=useContext(AuthContext)
     const [dates, setDates] = useState([
         {
           startDate: new Date(),
@@ -75,7 +76,7 @@ const Header = ({type}) => {
             {type !== "list" &&
                 <><h1 className="headerTitle">This Is Great!!</h1>
             <p className="headerDesc">Get more out of it using a free Smpbooking account</p>
-            <button className="headerBtn">Sign in / Register</button>
+            {!user && <button className="headerBtn">Sign in / Register</button>}
             
             
             <div className="headerSearch">
