@@ -9,7 +9,7 @@ const SearchItem = ({item}) => {
             <span className="siDistance">{item.distance}km from central</span>
             <span className="siTaxiOp">Free airport taxi</span>
             <span className="siSubtitle">Luxury Hotel of TATA Groups</span>
-            <span className="siFeatures">{item.desc}</span>
+            <span className="siFeatures">{item.title}</span>
             <span className="siCancelOp">Free cancellation</span>
             <span className="siCancelOpSubtitle">You can cancel later,So lock this great price!</span>
         </div>

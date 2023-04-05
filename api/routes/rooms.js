@@ -1,5 +1,5 @@
 import express from "express";
-import { createRoom, deleteRoom, getAllRoom, getRoom, updateRoom } from "../controllers/roomController.js";
+import { createRoom, deleteRoom, getAllRoom, getRoom, updateRoom, updateRoomAvailability } from "../controllers/roomController.js";
 import { verifyAdmin } from "../utils/verifyToken.js";
 
 
@@ -15,6 +15,8 @@ router.delete("/:id/:hotelid",verifyAdmin,deleteRoom)
 router.get("/:id",getRoom)
 //GETALL
 router.get("/",getAllRoom)
+//AVAILABILITY
+router.put("/availability/:id", updateRoomAvailability);
 
 
 export default router;

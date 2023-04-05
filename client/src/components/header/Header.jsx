@@ -44,6 +44,7 @@ const Header = ({type}) => {
         navigate("/hotels",{state:{destinantion,dates,options}});
     }
     
+    
     return (
       <div className="header">
         <div className={type==="list"?"headerContainer listMode":"headerContainer"}>
@@ -95,7 +96,8 @@ const Header = ({type}) => {
                 ranges={dates}
                 className="date"
                 minDate={new Date()}
-                />}
+                />
+             }
             </div>
             <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faPerson} className="headerIcon"/>
